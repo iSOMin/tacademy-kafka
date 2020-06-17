@@ -30,8 +30,9 @@ public class ConsumerWithSyncCommit {
             ConsumerRecords<String, String> records = consumer.poll(Duration.ofSeconds(1));
             for (ConsumerRecord<String, String> record : records) {
                 System.out.println(record.value());
+                consumer.commitSync();
+                record.offset()
             }
-            consumer.commitSync();
         }
     }
 }

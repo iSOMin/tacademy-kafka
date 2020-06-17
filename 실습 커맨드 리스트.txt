@@ -36,9 +36,15 @@ Apache Kafka 입문과 활용
 # 텔레그래프 설치
 26 brew install telegraf
 
+또는 https://drive.google.com/file/d/1iRbOjRvHpEnzbezjdifRWDTOrrD2iDag/view?usp=sharing
+
+27 telegraf -config telegraf.conf
+
+또는 ./telegraf -config telegraf.conf
+
 # 카프카 활용 실습 토픽 생성
-27 ./kafka-topics.sh --create --bootstrap-server {aws ec2 public ip}:9092 --replication-factor 1 --partitions 5 --topic my-computer-metric
+28 ./kafka-topics.sh --create --bootstrap-server {aws ec2 public ip}:9092 --replication-factor 1 --partitions 5 --topic my-computer-metric
 
 # 카프카 활용 실습 토픽 데이터 확인
-28 ./kafka-console-consumer.sh --bootstrap-server {aws ec2 public ip}:9092 --topic my-computer-metric --from-beginning
-29 tail -f *.csv
+29 ./kafka-console-consumer.sh --bootstrap-server {aws ec2 public ip}:9092 --topic my-computer-metric --from-beginning
+30 tail -f *.csv
